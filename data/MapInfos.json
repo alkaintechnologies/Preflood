@@ -1,16 +1,16 @@
 [
 null,
-{"id":1,"expanded":false,"name":"MAP001","order":2,"parentId":2,"scrollX":982.8,"scrollY":553.1999999999999},
+{"id":1,"expanded":false,"name":"MAP001","order":2,"parentId":2,"scrollX":655.2,"scrollY":368.8},
 {"id":2,"expanded":true,"name":"Debug Room","order":1,"parentId":0,"scrollX":819,"scrollY":461},
 {"id":3,"expanded":true,"name":"To Do","order":4,"parentId":0,"scrollX":893.4545454545455,"scrollY":502.90909090909093},
 {"id":4,"expanded":true,"name":"WIP","order":5,"parentId":0,"scrollX":893.4545454545455,"scrollY":502.90909090909093},
-{"id":5,"expanded":true,"name":"Cutscenes","order":11,"parentId":0,"scrollX":893.4545454545455,"scrollY":502.90909090909093},
-{"id":6,"expanded":true,"name":"Finished","order":12,"parentId":0,"scrollX":819,"scrollY":461},
-{"id":7,"expanded":true,"name":"Area 1","order":6,"parentId":4,"scrollX":720.8888888888889,"scrollY":409.77777777777777},
-{"id":8,"expanded":false,"name":"Dugeon 1","order":7,"parentId":4,"scrollX":720.8888888888889,"scrollY":2769.777777777778},
-{"id":9,"expanded":true,"name":"(Cin) Area 1","order":13,"parentId":6,"scrollX":893.4545454545455,"scrollY":502.90909090909093},
-{"id":10,"expanded":false,"name":"Boss Room","order":8,"parentId":4,"scrollX":811,"scrollY":937},
-{"id":11,"expanded":true,"name":"(Cin - 2) Area 1","order":9,"parentId":4,"scrollX":720.8888888888889,"scrollY":550.2222222222222},
-{"id":12,"expanded":false,"name":"Dugeon 1 (Demo)","order":10,"parentId":4,"scrollX":1212,"scrollY":526.9090909090909},
-{"id":13,"expanded":false,"name":"Template Testing","order":3,"parentId":2,"scrollX":893.4545454545455,"scrollY":502.90909090909093}
+{"id":5,"expanded":true,"name":"Cutscenes","order":9,"parentId":0,"scrollX":655.2,"scrollY":368.8},
+{"id":6,"expanded":true,"name":"Finished","order":12,"parentId":0,"scrollX":655.2,"scrollY":368.8},
+{"id":7,"expanded":true,"name":"Area 1","order":6,"parentId":4,"scrollX":648.8,"scrollY":591.2},
+{"id":8,"expanded":false,"name":"Dugeon 1","order":7,"parentId":4,"scrollX":1393.0909090909092,"scrollY":1108.3636363636365},
+{"id":9,"expanded":true,"name":"(Cin) Area 1","order":10,"parentId":5,"scrollX":893.4545454545455,"scrollY":502.90909090909093},
+{"id":10,"expanded":false,"name":"Boss Room","order":8,"parentId":4,"scrollX":816,"scrollY":800},
+{"id":11,"expanded":true,"name":"(Cin - 2) Area 1","order":11,"parentId":5,"scrollX":832,"scrollY":640},
+null,
+{"id":13,"expanded":false,"name":"Template Testing","order":3,"parentId":2,"scrollX":648.8,"scrollY":399.2}
 ]
