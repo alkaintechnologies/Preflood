@@ -9,6 +9,6 @@ null,
 {"id":7,"expanded":false,"name":"Dugeon","order":3,"parentId":3,"scrollX":649,"scrollY":366.5},
 {"id":8,"expanded":false,"name":"Dungeon Room Gen","order":4,"parentId":3,"scrollX":819,"scrollY":461},
 {"id":9,"expanded":false,"name":"Starting","order":5,"parentId":3,"scrollX":819,"scrollY":461},
-{"id":10,"expanded":false,"name":"Dayton's House","order":7,"parentId":1,"scrollX":657,"scrollY":366.5}
+{"id":10,"expanded":false,"name":"Dayton's House","order":7,"parentId":1,"scrollX":657,"scrollY":366.5},
 {"id":11,"expanded":false,"name":"Shop","order":8,"parentId":1,"scrollX":819,"scrollY":461}
 ]
