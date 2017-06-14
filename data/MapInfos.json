@@ -1,7 +1,7 @@
 [
 null,
 {"id":1,"expanded":false,"name":"Town","order":6,"parentId":3,"scrollX":911.1111111111111,"scrollY":402.6666666666667},
-{"id":2,"expanded":false,"name":"Debug Room","order":1,"parentId":0,"scrollX":540.6666666666666,"scrollY":307.3333333333333},
+{"id":2,"expanded":false,"name":"Debug Room","order":1,"parentId":0,"scrollX":657,"scrollY":366.5},
 {"id":3,"expanded":true,"name":"To Do:","order":2,"parentId":0,"scrollX":819,"scrollY":461},
 {"id":4,"expanded":false,"name":"Cinematic","order":8,"parentId":0,"scrollX":893.4545454545455,"scrollY":502.90909090909093},
 {"id":5,"expanded":false,"name":"Finished","order":9,"parentId":0,"scrollX":893.4545454545455,"scrollY":502.90909090909093},
