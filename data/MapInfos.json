@@ -11,7 +11,7 @@ null,
 {"id":9,"expanded":false,"name":"Player's Modern Home","order":12,"parentId":3,"scrollX":882.5454545454546,"scrollY":488.1818181818182},
 {"id":10,"expanded":false,"name":"Dayton's House","order":7,"parentId":1,"scrollX":816,"scrollY":624},
 {"id":11,"expanded":false,"name":"Shop","order":8,"parentId":1,"scrollX":1618,"scrollY":1259},
-{"id":12,"expanded":false,"name":"Plains","order":9,"parentId":13,"scrollX":1616,"scrollY":624},
+{"id":12,"expanded":false,"name":"Plains","order":9,"parentId":13,"scrollX":1367.2,"scrollY":657.6},
 {"id":13,"expanded":true,"name":"Main Map","order":3,"parentId":3,"scrollX":1834,"scrollY":1654},
 {"id":14,"expanded":false,"name":"Forest","order":10,"parentId":13,"scrollX":973.1999999999999,"scrollY":531.6},
 {"id":15,"expanded":false,"name":"Plains - Forest","order":11,"parentId":13,"scrollX":3130,"scrollY":2048}
