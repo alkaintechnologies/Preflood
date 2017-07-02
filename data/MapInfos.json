@@ -13,6 +13,6 @@ null,
 {"id":11,"expanded":false,"name":"Shop","order":8,"parentId":1,"scrollX":1618,"scrollY":1259},
 {"id":12,"expanded":false,"name":"Plains","order":9,"parentId":13,"scrollX":1616,"scrollY":624},
 {"id":13,"expanded":true,"name":"Main Map","order":3,"parentId":3,"scrollX":1834,"scrollY":1654},
-{"id":14,"expanded":false,"name":"Forest","order":10,"parentId":13,"scrollX":1618,"scrollY":961},
+{"id":14,"expanded":false,"name":"Forest","order":10,"parentId":13,"scrollX":973.1999999999999,"scrollY":531.6},
 {"id":15,"expanded":false,"name":"Plains - Forest","order":11,"parentId":13,"scrollX":3130,"scrollY":2048}
 ]
