@@ -5,5 +5,6 @@ null,
 {"id":3,"flags":[16],"mode":1,"name":"FSM_Outside","note":"","tilesetNames":["fsm_Town01_A1","fsm_Town01_A2","fsm_Town01_A3","fsm_Town01_A4","fsm_Town01_A5","fsm_Town01_B","fsm_Town01_C","fsm_Town01_D","fsm_Town01_E"]},
 {"id":4,"flags":[16],"mode":1,"name":"Modern Bedroom FSM","note":"","tilesetNames":["fsm_Inside01_A1","fsm_Inside01_A2","","fsm_Inside01_A4","fsm_Inside01_A5","fsm_Inside01_B","bedroom1","bedroom2","fsm_Inside01_E"]},
 {"id":5,"flags":[16],"mode":1,"name":"Forest (FSM Outside)(Starbird Trees)","note":"","tilesetNames":["fsm_Town01_A1","fsm_Inside01_A2","fsm_Town01_A3","fsm_Town01_A4","fsm_Town01_A5","fsm_Town01_B","Starbird Resources Trees","fsm_Town01_D","fsm_Town01_E"]},
-{"id":6,"flags":[16],"mode":1,"name":"Forest (paid tileset)","note":"","tilesetNames":["fsm_Forest02_A1","fsm_Forest02_A2","fsm_Forest01_A3","fsm_Forest02_A4","fsm_Forest02_A5","fsm_Forest01_B","fsm_Forest01_C","fsm_Inside01_D","fsm_Forest01_E"]}
+{"id":6,"flags":[16],"mode":1,"name":"Forest (paid tileset)(dark)","note":"","tilesetNames":["fsm_Forest02_A1","fsm_Forest02_A2","fsm_Forest01_A3","fsm_Forest02_A4","fsm_Forest02_A5","fsm_Forest01_B","fsm_Forest01_C","fsm_Inside01_D","fsm_Forest01_E"]},
+{"id":7,"flags":[16],"mode":1,"name":"Forest (paid tileset)(light)","note":"","tilesetNames":["fsm_Forest01_A1","fsm_Forest01_A2","fsm_Forest01_A3","fsm_Forest01_A4","fsm_Forest01_A5","fsm_Forest02_B","fsm_Forest01_C","fsm_Inside01_D",""]}
 ]
