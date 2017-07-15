@@ -1,7 +1,7 @@
 [
 null,
-{"id":1,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
-{"id":2,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":1,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"== Tutorial ==","switchId":1,"trigger":0},
+{"id":2,"list":[{"code":101,"indent":0,"parameters":["",0,0,2]},{"code":401,"indent":0,"parameters":["\\n<Movement:>Moveing is simple you can either click where you want"]},{"code":401,"indent":0,"parameters":["to go or you use the arrow keys (default) to move around."]},{"code":101,"indent":0,"parameters":["",0,0,2]},{"code":401,"indent":0,"parameters":["\\n<Menus:>Opening the menu is as simple as pressing the 'X' button (default)."]},{"code":401,"indent":0,"parameters":["Navigating the menus is the same as moveing."]},{"code":231,"indent":0,"parameters":[10,"Menu_Help",0,0,30,0,105,105,0,0]},{"code":232,"indent":0,"parameters":[10,0,0,0,30,0,105,105,255,0,60,true]},{"code":230,"indent":0,"parameters":[120]},{"code":232,"indent":0,"parameters":[10,0,0,0,30,0,95,95,200,0,60,true]},{"code":101,"indent":0,"parameters":["",0,0,2]},{"code":401,"indent":0,"parameters":["\\n<Menus:>Theres a lot to go over.\\w[30].\\w[30].\\w[60] too much to go over"]},{"code":401,"indent":0,"parameters":["now so we'll just come back to some of these later."]},{"code":101,"indent":0,"parameters":["",0,0,2]},{"code":401,"indent":0,"parameters":["\\n<Menus:>For now let's just look at the quest menu."]},{"code":0,"indent":0,"parameters":[]}],"name":"CE_Tuttorial_Start","switchId":1,"trigger":0},
 {"id":3,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
 {"id":4,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
 {"id":5,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
