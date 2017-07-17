@@ -1,16 +1,22 @@
 [
 null,
 {"id":1,"expanded":true,"name":"Town","order":8,"parentId":13,"scrollX":540.6666666666666,"scrollY":832},
-{"id":2,"expanded":false,"name":"Debug Room","order":1,"parentId":0,"scrollX":540.6666666666666,"scrollY":307.3333333333333},
+{"id":2,"expanded":false,"name":"Debug Room","order":1,"parentId":0,"scrollX":832,"scrollY":640},
 {"id":3,"expanded":true,"name":"To Do:","order":2,"parentId":0,"scrollX":2184,"scrollY":1229.3333333333333},
 {"id":4,"expanded":false,"name":"Cinematic","order":15,"parentId":0,"scrollX":728,"scrollY":409.77777777777777},
 {"id":5,"expanded":true,"name":"Finished","order":16,"parentId":0,"scrollX":540.6666666666666,"scrollY":316.6666666666667},
 {"id":6,"expanded":true,"name":"WIP","order":4,"parentId":0,"scrollX":893.4545454545455,"scrollY":502.90909090909093},
 {"id":7,"expanded":false,"name":"Dugeon","order":6,"parentId":13,"scrollX":2164,"scrollY":1570},
 {"id":8,"expanded":false,"name":"Dungeon Room Gen","order":7,"parentId":13,"scrollX":728,"scrollY":409.77777777777777},
+<<<<<<< HEAD
 {"id":9,"expanded":false,"name":"Player's Modern Home","order":14,"parentId":6,"scrollX":1404,"scrollY":763.7142857142857},
 {"id":10,"expanded":false,"name":"Dayton's House","order":9,"parentId":1,"scrollX":718,"scrollY":527.3333333333334},
 {"id":11,"expanded":false,"name":"Shop","order":10,"parentId":1,"scrollX":816,"scrollY":1058},
+=======
+{"id":9,"expanded":false,"name":"Player's Modern Home","order":14,"parentId":6,"scrollX":540.6666666666666,"scrollY":439.3333333333333},
+{"id":10,"expanded":false,"name":"Dayton's House","order":9,"parentId":1,"scrollX":540.6666666666666,"scrollY":307.3333333333333},
+{"id":11,"expanded":false,"name":"Shop","order":10,"parentId":1,"scrollX":2160,"scrollY":1384},
+>>>>>>> master
 {"id":12,"expanded":false,"name":"Plains","order":11,"parentId":13,"scrollX":832,"scrollY":624},
 {"id":13,"expanded":true,"name":"Main Map","order":5,"parentId":6,"scrollX":1622,"scrollY":1458},
 {"id":14,"expanded":false,"name":"Forest","order":12,"parentId":13,"scrollX":1390,"scrollY":790},
