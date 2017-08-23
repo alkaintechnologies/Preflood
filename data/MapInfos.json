@@ -11,12 +11,12 @@ null,
 {"id":9,"expanded":false,"name":"Player's Modern Home","order":16,"parentId":6,"scrollX":1089.3333333333333,"scrollY":614.6666666666666},
 {"id":10,"expanded":false,"name":"Dayton's House","order":9,"parentId":1,"scrollX":539.3333333333334,"scrollY":412.6666666666667},
 {"id":11,"expanded":false,"name":"Shop","order":10,"parentId":1,"scrollX":1726.6666666666667,"scrollY":1384.6666666666667},
-{"id":12,"expanded":false,"name":"Foothills","order":13,"parentId":13,"scrollX":811,"scrollY":453},
+{"id":12,"expanded":false,"name":"Foothills","order":13,"parentId":13,"scrollX":811.3333333333334,"scrollY":453.3333333333333},
 {"id":13,"expanded":true,"name":"Main Map","order":5,"parentId":6,"scrollX":1622,"scrollY":1458},
 {"id":14,"expanded":false,"name":"Forest","order":14,"parentId":13,"scrollX":1366.6666666666667,"scrollY":1268},
 {"id":15,"expanded":false,"name":"Plains - Forest","order":15,"parentId":13,"scrollX":2463.6,"scrollY":1384.2},
 {"id":16,"expanded":false,"name":"Test Map Forest","order":3,"parentId":3,"scrollX":657,"scrollY":366.5},
 {"id":17,"expanded":false,"name":"Start","order":19,"parentId":5,"scrollX":544.6666666666666,"scrollY":307.3333333333333},
-{"id":18,"expanded":true,"name":"Communal Hall","order":11,"parentId":1,"scrollX":832,"scrollY":640},
-{"id":19,"expanded":false,"name":"Communal Hall Cellar","order":12,"parentId":18,"scrollX":699.3333333333334,"scrollY":597.3333333333334}
+{"id":18,"expanded":true,"name":"Communal Hall","order":11,"parentId":1,"scrollX":756.6666666666666,"scrollY":640},
+{"id":19,"expanded":false,"name":"Communal Hall Cellar","order":12,"parentId":18,"scrollX":694,"scrollY":370.6666666666667}
 ]
