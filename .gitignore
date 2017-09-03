@@ -83,3 +83,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+data/MapInfos.json
+data/System.json
+data/Animations.json
