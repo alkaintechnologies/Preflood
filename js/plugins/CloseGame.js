@@ -5,7 +5,7 @@
  * @plugindesc Adds a close option to the title command window.
  * @author Zach Aars
  *
- * @param Exit Name
+ * @param exitName
  * @desc The offset value for the x coordinate.
  * @default exit
  * 
@@ -18,7 +18,7 @@
 	var custom_GE = Window_GameEnd.prototype.makeCommandList
 	var custom_SE = Scene_GameEnd.prototype.createCommandWindow;
 	var param = PluginManager.parameters('CloseGame');
-	var exitName = String(param['Exit Name'] || 'Exit');
+	var exitName = String(param['exitName'] || 'exit');
 	
 	
 	Window_TitleCommand.prototype.makeCommandList = function() {
