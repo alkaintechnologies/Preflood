@@ -17,9 +17,9 @@ null,
 {"id":15,"expanded":false,"name":"Plains - Forest","order":17,"parentId":13,"scrollX":2463,"scrollY":1384},
 {"id":16,"expanded":false,"name":"Test Map Forest","order":3,"parentId":3,"scrollX":657,"scrollY":366.5},
 {"id":17,"expanded":false,"name":"Start","order":22,"parentId":5,"scrollX":817,"scrollY":461},
-{"id":18,"expanded":true,"name":"Communal Hall","order":11,"parentId":1,"scrollX":1092,"scrollY":614.6666666666666},
+{"id":18,"expanded":true,"name":"Communal Hall","order":11,"parentId":1,"scrollX":882.5454545454546,"scrollY":505.0909090909091},
 {"id":19,"expanded":false,"name":"Communal Hall Cellar","order":12,"parentId":18,"scrollX":809,"scrollY":547},
-{"id":20,"expanded":false,"name":"Caves","order":14,"parentId":1,"scrollX":1318.6666666666667,"scrollY":794.6666666666666},
-{"id":21,"expanded":false,"name":"Labyrinth","order":18,"parentId":13,"scrollX":1396,"scrollY":977.3333333333334},
+{"id":20,"expanded":false,"name":"Caves","order":14,"parentId":1,"scrollX":1386.8571428571427,"scrollY":1092},
+{"id":21,"expanded":false,"name":"Labyrinth","order":18,"parentId":13,"scrollX":2032.3636363636365,"scrollY":1597.0909090909092},
 {"id":22,"expanded":true,"name":"Communal Hall 2nd Floor","order":13,"parentId":18,"scrollX":809,"scrollY":547}
 ]
