@@ -20,6 +20,6 @@ null,
 {"id":18,"expanded":true,"name":"Communal Hall","order":11,"parentId":1,"scrollX":1092,"scrollY":614.6666666666666},
 {"id":19,"expanded":false,"name":"Communal Hall Cellar","order":12,"parentId":18,"scrollX":809,"scrollY":547},
 {"id":20,"expanded":false,"name":"Caves","order":14,"parentId":1,"scrollX":1318.6666666666667,"scrollY":794.6666666666666},
-{"id":21,"expanded":false,"name":"Labyrinth","order":18,"parentId":13,"scrollX":2426.1818181818185,"scrollY":1980},
+{"id":21,"expanded":false,"name":"Labyrinth","order":18,"parentId":13,"scrollX":2426,"scrollY":1121},
 {"id":22,"expanded":true,"name":"Communal Hall 2nd Floor","order":13,"parentId":18,"scrollX":809,"scrollY":547}
 ]
