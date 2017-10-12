@@ -1,6 +1,6 @@
 [
 null,
-{"id":1,"battlerName":"Dayton_Battler","characterIndex":0,"characterName":"Players","classId":7,"equips":[0,0,0,3,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":15,"name":"Dayton","nickname":"","note":"<Starting JP: 60>\n<Menu Bust: Dayton_Bust>\n<Menu Bust Y: -100>","profile":""},
+{"id":1,"battlerName":"Dayton_Battler","characterIndex":0,"characterName":"Players","classId":7,"equips":[0,0,0,3,0],"faceIndex":0,"faceName":"","traits":[{"code":51,"dataId":14,"value":1}],"initialLevel":1,"maxLevel":15,"name":"Dayton","nickname":"","note":"<Starting JP: 60>\n<Menu Bust: Dayton_Bust>\n<Menu Bust Y: -100>","profile":""},
 {"id":2,"battlerName":"_Tera_Battler","characterIndex":2,"characterName":"Base","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[{"code":41,"dataId":2,"value":1}],"initialLevel":1,"maxLevel":99,"name":"Tera","nickname":"","note":"<Starting JP: 70>","profile":""},
 {"id":3,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""},
 {"id":4,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""}
