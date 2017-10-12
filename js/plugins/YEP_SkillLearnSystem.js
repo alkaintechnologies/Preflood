@@ -1,5 +1,5 @@
 //=============================================================================
-// Yanfly Engine Plugins - Skill Learn
+// Yanfly Engine Plugins - Skill Learn System
 // YEP_SkillLearnSystem.js
 //=============================================================================
 
@@ -8,10 +8,11 @@ Imported.YEP_SkillLearnSystem = true;
 
 var Yanfly = Yanfly || {};
 Yanfly.SLS = Yanfly.SLS || {};
+Yanfly.SLS.version = 1.14;
 
 //=============================================================================
  /*:
- * @plugindesc v1.08 Allows actors to learn skills from the skill menu
+ * @plugindesc v1.14 Allows actors to learn skills from the skill menu
  * through crafting them via items or otherwise.
  * @author Yanfly Engine Plugins
  *
@@ -19,21 +20,34 @@ Yanfly.SLS = Yanfly.SLS || {};
  * @default
  *
  * @param Learn Command
+ * @parent ---General---
  * @desc How the command for learning skills appear in the skill
  * command window.
  * @default Learn Skills
  *
  * @param Show Command
+ * @parent ---General---
+ * @type boolean
+ * @on Show
+ * @off Hide
  * @desc Show the Learn command in the main menu by default?
  * NO - false     YES - true
  * @default true
  *
  * @param Enable Command
+ * @parent ---General---
+ * @type boolean
+ * @on Enable
+ * @off Disable
  * @desc Enable the Learn command in the main menu by default?
  * NO - false     YES - true
  * @default true
  *
  * @param Integrate
+ * @parent ---General---
+ * @type boolean
+ * @on Integrate
+ * @off No Change
  * @desc Integrate Learn Skills into the Skill scene?
  * NO - false     YES - true
  * @default false
@@ -42,20 +56,27 @@ Yanfly.SLS = Yanfly.SLS || {};
  * @default
  *
  * @param Confirm Window
+ * @parent ---Confirm Learn---
+ * @type boolean
+ * @on Confirmation
+ * @off No Confirmation
  * @desc For non-integrated menu, show a learn confirmation?
  * NO - false     YES - true
  * @default true
  *
  * @param Confirm Text
+ * @parent ---Confirm Learn---
  * @desc If using the confirm window, this is the text used.
  * %1 - Actor     %2 - Skill Name
  * @default Have %1 learn %2?
  *
  * @param Confirm Yes
+ * @parent ---Confirm Learn---
  * @desc Text used to display yes.
  * @default Yes
  *
  * @param Confirm No
+ * @parent ---Confirm Learn---
  * @desc Text used to display no.
  * @default No
  *
@@ -63,24 +84,36 @@ Yanfly.SLS = Yanfly.SLS || {};
  * @default
  *
  * @param Learned Text
+ * @parent ---Skill Learn---
  * @desc Text showing the skill has been learned.
  * @default Learned
  *
  * @param Learned Size
+ * @parent ---Skill Learn---
+ * @type number
+ * @min 1
  * @desc Font size for the text showing the skill has been learned.
  * Default: 28
  * @default 20
  *
  * @param Learn Cost
+ * @parent ---Skill Learn---
  * @desc Text used to list what are the learn costs for the skill.
  * @default Learn Skill Cost
  *
  * @param Cost Size
+ * @parent ---Skill Learn---
+ * @type number
+ * @min 1
  * @desc Font size used for the cost of learning a skill.
  * Default: 28
  * @default 20
  *
  * @param Show Gold Window
+ * @parent ---Skill Learn---
+ * @type boolean
+ * @on Show
+ * @off Hide
  * @desc Shows the gold window when learning a new skill.
  * NO - false     YES - true
  * @default true
@@ -89,10 +122,16 @@ Yanfly.SLS = Yanfly.SLS || {};
  * @default
  *
  * @param Default Gold Cost
+ * @parent ---Default---
+ * @type number
+ * @min 0
  * @desc Default gold cost of learning new skills.
  * @default 1000
  *
  * @param Default JP Cost
+ * @parent ---Default---
+ * @type number
+ * @min 0
  * @desc Default JP cost of learning new skills.
  * Requires YEP_JobPoints.js
  * @default 100
@@ -209,6 +248,22 @@ Yanfly.SLS = Yanfly.SLS || {};
  *   use text codes for this.
  *
  * ============================================================================
+ * Lunatic Mode - Custom JP Costs
+ * ============================================================================
+ *
+ * For those who have basic JavaScript knowledge and would like to make the JP
+ * costs for skills dynamic, you can use the following notetags:
+ *
+ * Skill Notetags:
+ *
+ *   <Custom Learn JP Cost>
+ *    cost = user.level * 100;
+ *   </Custom Learn JP Cost>
+ *   The 'cost' variable is the value that will be returned as a result of this
+ *   Lunatic Mode notetag. The value returned here from this code will be added
+ *   on top of the <Learn Cost: x JP> value.
+ *
+ * ============================================================================
  * Plugin Commands
  * ============================================================================
  *
@@ -227,6 +282,25 @@ Yanfly.SLS = Yanfly.SLS || {};
  * ============================================================================
  * Changelog
  * ============================================================================
+ *
+ * Version 1.14:
+ * - Updated for RPG Maker MV version 1.5.0.
+ *
+ * Version 1.13:
+ * - Lunatic Mode fail safes added.
+ *
+ * Version 1.12:
+ * - Updated for RPG Maker MV version 1.3.2.
+ *
+ * Version 1.11:
+ * - Removed dependency on YEP_JobPoints.js if using Integrated skill learn.
+ *
+ * Version 1.10:
+ * - Added <Custom Learn JP Cost> Lunatic Mode notetag. Look in the plugin's
+ * helpfile for more details!
+ *
+ * Version 1.09:
+ * - Compatibility update with Class Change Core's <Use Nickname> notetag.
  *
  * Version 1.08:
  * - Updated for RPG Maker MV version 1.1.0.
@@ -275,8 +349,11 @@ Yanfly.Param = Yanfly.Param || {};
 
 Yanfly.Param.SLSCommand = String(Yanfly.Parameters['Learn Command']);
 Yanfly.Param.SLSShowLearn = String(Yanfly.Parameters['Show Command']);
+Yanfly.Param.SLSShowLearn = eval(Yanfly.Param.SLSShowLearn);
 Yanfly.Param.SLSEnableLearn = String(Yanfly.Parameters['Enable Command']);
+Yanfly.Param.SLSEnableLearn = eval(Yanfly.Param.SLSEnableLearn);
 Yanfly.Param.SLSIntegrate = String(Yanfly.Parameters['Integrate']);
+Yanfly.Param.SLSIntegrate = eval(Yanfly.Param.SLSIntegrate);
 
 Yanfly.Param.SLSConfirmWin = eval(String(Yanfly.Parameters['Confirm Window']));
 Yanfly.Param.SLSConfirmText = String(Yanfly.Parameters['Confirm Text']);
@@ -289,6 +366,7 @@ Yanfly.Param.SLSLearnCost = String(Yanfly.Parameters['Learn Cost']);
 Yanfly.Param.SLSCostSize = Number(Yanfly.Parameters['Cost Size']);
 Yanfly.Param.SLSItemCostFmt = String(Yanfly.Parameters['Item Cost']);
 Yanfly.Param.SLSGoldWindow = String(Yanfly.Parameters['Show Gold Window']);
+Yanfly.Param.SLSGoldWindow = eval(Yanfly.Param.SLSGoldWindow);
 
 Yanfly.Param.SLSDefaultGold = Number(Yanfly.Parameters['Default Gold Cost']);
 Yanfly.Param.SLSDefaultJp = Number(Yanfly.Parameters['Default JP Cost']);
@@ -398,6 +476,7 @@ DataManager.processSLSNotetags2 = function(group) {
     obj.learnShowEval = '';
     obj.learnCustomText = '';
     var mode = 'none';
+    obj.customLearnJpCostEval = '';
 
     for (var i = 0; i < notedata.length; i++) {
       var line = notedata[i];
@@ -451,6 +530,12 @@ DataManager.processSLSNotetags2 = function(group) {
         obj.learnCustomText = obj.learnCustomText + line + '\n';
       } else if (mode === 'learnShowEval') {
         obj.learnShowEval = obj.learnShowEval + line + '\n';
+      } else if (line.match(/<(?:CUSTOM LEARN JP COST)>/i)) {
+        mode = 'customLearnJpCost';
+      } else if (line.match(/<\/(?:CUSTOM LEARN JP COST)>/i)) {
+        mode = 'none';
+      } else if (mode === 'customLearnJpCost') {
+        obj.customLearnJpCostEval = obj.customLearnJpCostEval + line + '\n';
       }
     }
   }
@@ -514,8 +599,8 @@ Game_System.prototype.initialize = function() {
 };
 
 Game_System.prototype.initSkillLearnSystem = function() {
-    this._showLearnSkill = eval(Yanfly.Param.SLSShowLearn);
-    this._enableLearnSkill = eval(Yanfly.Param.SLSEnableLearn);
+    this._showLearnSkill = Yanfly.Param.SLSShowLearn;
+    this._enableLearnSkill = Yanfly.Param.SLSEnableLearn;
 };
 
 Game_System.prototype.isShowLearnSkill = function() {
@@ -541,10 +626,11 @@ Game_Actor.prototype.sufficientJpLearnSkill = function(skill, classId) {
   if (!skill) return false;
   if (!Imported.YEP_JobPoints) return true;
   var jpCost = skill.learnCostJp;
+  jpCost += this.customLearnSkillJpCost(skill);
   if (this.currentClass().learnSkills.contains(skill.id)) {
     if (this.jp(classId) >= jpCost) return true;
   }
-  if (Imported.YEP_ClassChangeCore && eval(Yanfly.Param.SLSIntegrate)) {
+  if (Imported.YEP_ClassChangeCore && Yanfly.Param.SLSIntegrate) {
     for (var i = 0; i < this.unlockedClasses().length; ++i) {
       classId = this.unlockedClasses()[i];
       if (!$dataClasses[classId]) continue;
@@ -557,6 +643,10 @@ Game_Actor.prototype.sufficientJpLearnSkill = function(skill, classId) {
     }
   }
   return false;
+};
+
+Game_Actor.prototype.isLearnedSkillRaw = function(skillId) {
+  return this._skills.contains(skillId);
 };
 
 Game_Actor.prototype.canLearnSkill = function(skill, classId) {
@@ -572,6 +662,26 @@ Yanfly.SLS.Game_Actor_releaseUnequippableItems =
 Game_Actor.prototype.releaseUnequippableItems = function(forcing) {
     if (Yanfly.SLS.PreventReleaseItem) return;
     Yanfly.SLS.Game_Actor_releaseUnequippableItems.call(this, forcing);
+};
+
+Game_Actor.prototype.customLearnSkillJpCost = function(skill) {
+    if (!skill) return 0;
+    if (skill.customLearnJpCostEval === '') return 0;
+    var cost = 0;
+    var item = skill;
+    var a = this;
+    var b = this;
+    var user = this;
+    var target = this;
+    var s = $gameSwitches._data;
+    var v = $gameVariables._data;
+    var code = skill.customLearnJpCostEval;
+    try {
+      eval(code);
+    } catch (e) {
+      Yanfly.Util.displayError(e, code, 'CUSTOM SKILL LEARN JP COST ERROR');
+    }
+    return cost;
 };
 
 //=============================================================================
@@ -635,7 +745,9 @@ Game_Party.prototype.setupLearnSkillBattleTest = function() {
       var classData = actor.currentClass();
       for (var j = 0; j < classData.learnSkills.length; ++j) {
         var skillId = classData.learnSkills[j];
-        if ($dataSkills[skillId]) actor.learnSkill(skillId);
+        if (!$dataSkills[skillId]) continue;
+        if ($dataSkills[skillId].name === '') continue;
+        actor.learnSkill(skillId);
       }
       actor.refresh();
     }
@@ -743,7 +855,7 @@ Window_SkillType.prototype.update = function() {
 Window_SkillType.prototype.isSkillLearnIntegrated = function() {
     if (!this._classListWindow) return false;
     if (this._actor.availableClasses() <= 1) return false;
-    return eval(Yanfly.Param.SLSIntegrate);
+    return Yanfly.Param.SLSIntegrate;
 };
 
 //=============================================================================
@@ -802,6 +914,7 @@ Window_SkillLearn.prototype.createSkillLearnData = function() {
 };
 
 Window_SkillLearn.prototype.includes = function(skill) {
+    if (skill.name === '') return false;
     if (!this.meetsRequirements(skill)) return false;
     return true;
 };
@@ -818,7 +931,7 @@ Window_SkillLearn.prototype.meetsRequirements = function(skill) {
     for (var i = 0; i < skill.learnRequireSkill.length; ++i) {
       var skillId = skill.learnRequireSkill[i];
       if (!$dataSkills[skillId]) continue;
-      if (!this._actor.isLearnedSkill(skillId)) return false;
+      if (!this._actor.isLearnedSkillRaw(skillId)) return false;
     }
     for (var i = 0; i < skill.learnRequireSwitch.length; ++i) {
       var switchId = skill.learnRequireSwitch[i];
@@ -830,7 +943,7 @@ Window_SkillLearn.prototype.meetsRequirements = function(skill) {
 Window_SkillLearn.prototype.isEnabled = function(item) {
     if (!this._actor) return false;
     if (!item) return false;
-    if (this._actor.isLearnedSkill(item.id)) return false;
+    if (this._actor.isLearnedSkillRaw(item.id)) return false;
     if ($gamePlayer.isDebugThrough()) return true;
     if (!this._actor.canLearnSkill(item, this._classId)) return false;
     if (!this.meetsRequirements(item)) return false;
@@ -847,7 +960,12 @@ Window_SkillLearn.prototype.getEvalLine = function(evalLine) {
     var subject = this._actor;
     var s = $gameSwitches._data;
     var v = $gameVariables._data;
-    eval(evalLine);
+    var code = evalLine;
+    try {
+      eval(code);
+    } catch (e) {
+      Yanfly.Util.displayError(e, code, 'SKILL LEARN EVAL LINE ERROR');
+    }
     return value;
 };
 
@@ -863,7 +981,7 @@ Window_SkillLearn.prototype.drawItem = function(index) {
 };
 
 Window_SkillLearn.prototype.drawItemLearned = function(skill, wx, wy, ww) {
-    if (!this._actor.isLearnedSkill(skill.id)) {
+    if (!this._actor.isLearnedSkillRaw(skill.id)) {
       this.drawSkillCost(skill, wx, wy, ww);
       return;
     }
@@ -932,12 +1050,16 @@ Window_SkillLearnClass.prototype.isEnabled = function(classId) {
     if (!this._skill) return false;
     var item = $dataClasses[classId];
     if (!item) return false;
-    var jpCost = this._skill.learnCostJp;
-    if (jpCost > this._actor.jp(item.id)) return false;
+    if (Imported.YEP_JobPoints) {
+      var jpCost = this._skill.learnCostJp;
+      jpCost += this._actor.customLearnSkillJpCost(this._skill);
+      if (jpCost > this._actor.jp(item.id)) return false;
+    }
     return Window_ClassList.prototype.isEnabled.call(this, classId);
 };
 
 Window_SkillLearnClass.prototype.drawClassLevel = function(item, wx, wy, ww) {
+    if (!Imported.YEP_JobPoints) return;
     var value = Yanfly.Util.toGroup(this._actor.jp(item.id));
     var icon = '\\i[' + Yanfly.Icon.Jp + ']';
     var fmt = Yanfly.Param.JpMenuFormat;
@@ -1052,7 +1174,11 @@ Window_SkillLearnData.prototype.drawCostText = function(wy) {
 
 Window_SkillLearnData.prototype.hasLearnCost = function() {
     if (this._skill.learnCostGold > 0) return true;
-    if (Imported.YEP_JobPoints && this._skill.learnCostJp > 0) return true;
+    if (Imported.YEP_JobPoints) {
+      var cost = this._skill.learnCostJp;
+      cost += this._actor.customLearnSkillJpCost(this._skill);
+      return cost > 0;
+    } 
     if (this._skill.learnCost.length > 0) return true;
     return false;
 };
@@ -1082,13 +1208,15 @@ Window_SkillLearnData.prototype.drawGoldCosts = function(wy) {
 
 Window_SkillLearnData.prototype.drawJpCosts = function(wy) {
     if (!Imported.YEP_JobPoints) return wy;
-    if (this._skill.learnCostJp <= 0) return wy;
+    var cost = this._skill.learnCostJp;
+    cost += this._actor.customLearnSkillJpCost(this._skill);
+    if (cost <= 0) return wy;
     var text = '';
     if (Yanfly.Icon.Jp > 0) text = '\\i[' + Yanfly.Icon.Jp + ']';
     text += Yanfly.Param.Jp;
     var wx = this.drawTextEx(text, 0, wy);
     var ww = this.contents.width - wx - 4;
-    var costText = Yanfly.Util.toGroup(this._skill.learnCostJp);
+    var costText = Yanfly.Util.toGroup(cost);
     this.contents.fontSize = Yanfly.Param.SLSCostSize;
     if (this._actor.sufficientJpLearnSkill(this._skill, this._classId)) {
       this.changeTextColor(this.powerUpColor());
@@ -1213,6 +1341,9 @@ Window_SkillLearnCommand.prototype.addClassCommand = function(classId) {
     var actorClass = $dataClasses[classId];
     if (!actorClass) return;
     var name = actorClass.name;
+    if (actorClass.useNickname) {
+      name = this._actor.nickname();
+    }
     this.addCommand(name, 'class', true, classId);
 };
 
@@ -1236,7 +1367,7 @@ Window_SkillLearnCommand.prototype.update = function() {
       var mpRate = actor.mp / Math.max(1, actor.mmp);
       Yanfly.SLS.PreventReleaseItem = true;
       if (Imported.YEP_ClassChangeCore) {
-        actor.changeClass(classId, eval(Yanfly.Param.CCCMaintainLv));
+        actor.changeClass(classId, Yanfly.Param.CCCMaintainLv);
       } else {
         actor.changeClass(classId, false);
       }
@@ -1378,7 +1509,7 @@ Scene_Skill.prototype.createSkillLearnWindow = function() {
 };
 
 Scene_Skill.prototype.createGoldWindow = function() {
-    if (!eval(Yanfly.Param.SLSGoldWindow)) return;
+    if (!Yanfly.Param.SLSGoldWindow) return;
     var wx = Graphics.boxWidth / 2;
     this._goldWindow = new Window_Gold(wx, 0);
     this._goldWindow.width = Graphics.boxWidth / 2;
@@ -1392,7 +1523,6 @@ Scene_Skill.prototype.createGoldWindow = function() {
 
 Scene_Skill.prototype.createSkillLearnClassWindow = function() {
     if (!Imported.YEP_ClassChangeCore) return;
-    if (!Imported.YEP_JobPoints) return;
     if (this._skillLearnClassWindow) return;
     var wx = 0;
     var wy = this._statusWindow.y + this._statusWindow.height;
@@ -1479,8 +1609,12 @@ Scene_Skill.prototype.processLearnSkill = function(skill, classId) {
   SoundManager.playUseSkill();
   $gameParty.loseGold(skill.learnCostGold);
   $gameParty.processLearnSkillCost(skill);
+  if (Imported.YEP_JobPoints) {
+    var cost = skill.learnCostJp;
+    cost += this.actor().customLearnSkillJpCost(skill);
+    this.actor().loseJp(cost, classId);
+  }
   this.processLearnCostEval(skill, classId);
-  if (Imported.YEP_JobPoints) this.actor().loseJp(skill.learnCostJp, classId);
   this.actor().refresh();
   this._skillLearnWindow.refresh();
   this._skillLearnWindow.updateHelp();
@@ -1492,13 +1626,18 @@ Scene_Skill.prototype.processLearnSkill = function(skill, classId) {
 };
 
 Scene_Skill.prototype.processLearnCostEval = function(skill, classId) {
-    if (skill.learnCostEval === '') return;
-    var a = this.actor();
-    var user = this.actor();
-    var subject = this.actor();
-    var s = $gameSwitches._data;
-    var v = $gameVariables._data;
-    eval(skill.learnCostEval);
+  if (skill.learnCostEval === '') return;
+  var a = this.actor();
+  var user = this.actor();
+  var subject = this.actor();
+  var s = $gameSwitches._data;
+  var v = $gameVariables._data;
+  var code = skill.learnCostEval;
+  try {
+    eval(code);
+  } catch (e) {
+    Yanfly.Util.displayError(e, code, 'SKILL LEARN CUSTOM COST ERROR');
+  }
 };
 
 Scene_Skill.prototype.onLearnCancel = function() {
@@ -1680,7 +1819,7 @@ Scene_LearnSkill.prototype.refreshStatus = function() {
     var mpRate = actor.mp / Math.max(1, actor.mmp);
     Yanfly.SLS.PreventReleaseItem = true;
     if (Imported.YEP_ClassChangeCore) {
-      actor.changeClass(classId, eval(Yanfly.Param.CCCMaintainLv));
+      actor.changeClass(classId, Yanfly.Param.CCCMaintainLv);
     } else {
       actor.changeClass(classId, false);
     }
@@ -1698,8 +1837,12 @@ Scene_LearnSkill.prototype.processLearnSkill = function(skill, classId) {
   SoundManager.playUseSkill();
   $gameParty.loseGold(skill.learnCostGold);
   $gameParty.processLearnSkillCost(skill);
+  if (Imported.YEP_JobPoints) {
+    var cost = skill.learnCostJp;
+    cost += this.actor().customLearnSkillJpCost(skill);
+    this.actor().loseJp(cost, classId);
+  }
   this.processLearnCostEval(skill, classId);
-  if (Imported.YEP_JobPoints) this.actor().loseJp(skill.learnCostJp, classId);
   this.actor().refresh();
   this._skillLearnWindow.refresh();
   this._skillLearnWindow.updateHelp();
@@ -1725,7 +1868,12 @@ Scene_LearnSkill.prototype.processLearnCostEval = function(skill, classId) {
     var subject = this.actor();
     var s = $gameSwitches._data;
     var v = $gameVariables._data;
-    eval(skill.learnCostEval);
+    var code = skill.learnCostEval;
+    try {
+      eval(code);
+    } catch (e) {
+      Yanfly.Util.displayError(e, code, 'SKILL LEARN COST ERROR');
+    }
 };
 
 Scene_LearnSkill.prototype.onLearnCancel = function() {
@@ -1787,6 +1935,17 @@ Yanfly.Util.getRange = function(n, m) {
 
 Yanfly.Util.onlyUnique = function(value, index, self) {
     return self.indexOf(value) === index;
+};
+
+Yanfly.Util.displayError = function(e, code, message) {
+  console.log(message);
+  console.log(code || 'NON-EXISTENT');
+  console.error(e);
+  if (Utils.isNwjs() && Utils.isOptionValid('test')) {
+    if (!require('nw.gui').Window.get().isDevToolsOpen()) {
+      require('nw.gui').Window.get().showDevTools();
+    }
+  }
 };
 
 //=============================================================================
