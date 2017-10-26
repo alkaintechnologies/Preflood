@@ -99,7 +99,7 @@
     SceneManager._screenHeight = screenHeight;
     SceneManager._boxWidth = screenWidth;
     SceneManager._boxHeight = screenHeight;
-
+    
     SceneManager.preferableRendererType = function() {
         if (Utils.isOptionValid('canvas')) {
             return 'canvas';

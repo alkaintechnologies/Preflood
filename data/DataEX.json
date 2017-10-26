@@ -1,1 +1,1 @@
-{"Actors":{},"States":{},"Classes":{},"Skills":{},"System":{},"CommonEvents":{}}
+{"Actors":{},"States":{},"Classes":{},"Skills":{},"System":{"1":{"currencyUnit":"$$gameVariables.value(11)"}},"CommonEvents":{}}
