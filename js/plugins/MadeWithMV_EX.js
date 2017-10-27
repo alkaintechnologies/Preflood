@@ -64,20 +64,21 @@
  * @default 160
  *
  */
-
+/*
 var Liquidize = Liquidize || {};
 Liquidize.MadeWithMV = {};
-Liquidize.MadeWithMV.Parameters = PluginManager.parameters('MadeWithMv');
+*/
+var Parameters = PluginManager.parameters('MadeWithMv_EX');
 
-Liquidize.MadeWithMV.ShowMV = JSON.parse(Liquidize.MadeWithMV.Parameters["Show Made With MV"]);
-Liquidize.MadeWithMV.MVImage = String(Liquidize.MadeWithMV.Parameters["Made with MV Image"]);
-Liquidize.MadeWithMV.ShowCustom = JSON.parse(Liquidize.MadeWithMV.Parameters["Show Custom Splash"]);
-Liquidize.MadeWithMV.ShowCustom2 = JSON.parse(Liquidize.MadeWithMV.Parameters["Show Second Custom Splash"]);
-Liquidize.MadeWithMV.CustomImage = String(Liquidize.MadeWithMV.Parameters["Custom Image"]);
-Liquidize.MadeWithMV.CustomImage2 = String(Liquidize.MadeWithMV.Parameters["Second Custom Image"]);
-Liquidize.MadeWithMV.FadeOutTime = Number(Liquidize.MadeWithMV.Parameters["Fade Out Time"]) || 120;
-Liquidize.MadeWithMV.FadeInTime = Number(Liquidize.MadeWithMV.Parameters["Fade In Time"]) || 120;
-Liquidize.MadeWithMV.WaitTime = Number(Liquidize.MadeWithMV.Parameters["Wait Time"]) || 160;
+ShowMV = JSON.parse(Parameters["Show Made With MV"]);
+MVImage = String(Parameters["Made with MV Image"]);
+ShowCustom = JSON.parse(Parameters["Show Custom Splash"]);
+ShowCustom2 = JSON.parse(Parameters["Show Second Custom Splash"]);
+CustomImage = String(Parameters["Custom Image"]);
+CustomImage2 = String(Parameters["Second Custom Image"]);
+FadeOutTime = Number(Parameters["Fade Out Time"]) || 120;
+FadeInTime = Number(Parameters["Fade In Time"]) || 120;
+WaitTime = Number(Parameters["Wait Time"]) || 160;
 
 
 //-----------------------------------------------------------------------------
@@ -99,20 +100,20 @@ function Scene_Splash() {
     var _Scene_Boot_loadSystemImages = Scene_Boot.prototype.loadSystemImages;
     Scene_Boot.prototype.loadSystemImages = function() {
         _Scene_Boot_loadSystemImages.call(this);
-        if (Liquidize.MadeWithMV.ShowMV) {
-            ImageManager.loadSystem(Liquidize.MadeWithMV.MVImage);
+        if (ShowMV) {
+            ImageManager.loadSystem(MVImage);
         }
-        if (Liquidize.MadeWithMV.ShowCustom) {
-            ImageManager.loadSystem(Liquidize.MadeWithMV.CustomImage);
+        if (ShowCustom) {
+            ImageManager.loadSystem(CustomImage);
         }
-        if (Liquidize.MadeWithMV.ShowCustom2) {
-            ImageManager.loadSystem(Liquidize.MadeWithMV.CustomImage2);
+        if (ShowCustom2) {
+            ImageManager.loadSystem(CustomImage2);
         }
     };
 
     var _Scene_Boot_start = Scene_Boot.prototype.start;
     Scene_Boot.prototype.start = function() {
-        if ((Liquidize.MadeWithMV.ShowMV || Liquidize.MadeWithMV.ShowCustom || Liquidize.MadeWithMV.ShowCustom2) && !DataManager.isBattleTest() && !DataManager.isEventTest()) {
+        if ((ShowMV || ShowCustom || ShowCustom2) && !DataManager.isBattleTest() && !DataManager.isEventTest()) {
             SceneManager.goto(Scene_Splash);
         } else {
             _Scene_Boot_start.call(this);
@@ -132,8 +133,8 @@ function Scene_Splash() {
         this._mvSplash = null;
         this._customSplash = null;
         this._customSplash2 = null;
-        this._mvWaitTime = Liquidize.MadeWithMV.WaitTime;
-        this._customWaitTime = Liquidize.MadeWithMV.WaitTime;
+        this._mvWaitTime = WaitTime;
+        this._customWaitTime = WaitTime;
         this._mvFadeOut = false;
         this._mvFadeIn = false;
         this._customFadeOut = false;
@@ -160,9 +161,9 @@ function Scene_Splash() {
     };
 
     Scene_Splash.prototype.update = function() {
-        if (Liquidize.MadeWithMV.ShowMV) {
+        if (ShowMV) {
             if (!this._mvFadeIn) {
-                this.startFadeIn(Liquidize.MadeWithMV.FadeInTime, false);
+                this.startFadeIn(FadeInTime, false);
                 this._mvFadeIn = true;
             } else {
                 if (this._mvWaitTime > 0 && this._mvFadeOut == false) {
@@ -170,18 +171,18 @@ function Scene_Splash() {
                 } else {
                     if (this._mvFadeOut == false) {
                         this._mvFadeOut = true;
-                        this.startFadeOut(Liquidize.MadeWithMV.FadeOutTime, false);
+                        this.startFadeOut(FadeOutTime, false);
                     }
                 }
             }
         }
 
-        if (Liquidize.MadeWithMV.ShowCustom) {
-            if (Liquidize.MadeWithMV.ShowMV && this._mvFadeOut == true) {
+        if (ShowCustom) {
+            if (ShowMV && this._mvFadeOut == true) {
                 if (!this._customFadeIn && this._fadeDuration == 0) {
                     this._customSplash.opacity = 255;
-                    this._customWaitTime = Liquidize.MadeWithMV.WaitTime;
-                    this.startFadeIn(Liquidize.MadeWithMV.FadeInTime, false);
+                    this._customWaitTime = WaitTime;
+                    this.startFadeIn(FadeInTime, false);
                     this._customFadeIn = true;
                 } else {
                     if (this._customWaitTime > 0 && this._customFadeOut == false) {
@@ -189,14 +190,14 @@ function Scene_Splash() {
                     } else {
                         if (this._customFadeOut == false) {
                             this._customFadeOut = true;
-                            this.startFadeOut(Liquidize.MadeWithMV.FadeOutTime, false);
+                            this.startFadeOut(FadeOutTime, false);
                         }
                     }
                 }
-            } else if (!Liquidize.MadeWithMV.ShowMV) {
+            } else if (!ShowMV) {
                 if (!this._customFadeIn) {
                     this._customSplash.opacity = 255;
-                    this.startFadeIn(Liquidize.MadeWithMV.FadeInTime, false);
+                    this.startFadeIn(FadeInTime, false);
                     this._customFadeIn = true;
                 } else {
                     if (this._customWaitTime > 0 && this._customFadeOut == false) {
@@ -204,17 +205,17 @@ function Scene_Splash() {
                     } else {
                         if (this._customFadeOut == false) {
                             this._customFadeOut = true;
-                            this.startFadeOut(Liquidize.MadeWithMV.FadeOutTime, false);
+                            this.startFadeOut(FadeOutTime, false);
                         }
                     }
                 }
             }
         }
 
-        if (Liquidize.MadeWithMV.ShowCustom) {
-            if (Liquidize.MadeWithMV.ShowMV && this._mvFadeOut == true && this._customFadeOut == true) {
+        if (ShowCustom) {
+            if (ShowMV && this._mvFadeOut == true && this._customFadeOut == true) {
                 this.gotoTitleOrTest();
-            } else if (!Liquidize.MadeWithMV.ShowMV && this._customFadeOut == true) {
+            } else if (!ShowMV && this._customFadeOut == true) {
                 this.gotoTitleOrTest();
             }
         } else {
@@ -223,12 +224,12 @@ function Scene_Splash() {
             }
         }
 
-        if (Liquidize.MadeWithMV.ShowCustom2) {
-            if (Liquidize.MadeWithMV.ShowMV && this._mvFadeOut == true) {
+        if (ShowCustom2) {
+            if (ShowMV && this._mvFadeOut == true) {
                 if (!this._customFadeIn && this._fadeDuration == 0) {
                     this._customSplash2.opacity = 255;
-                    this._customWaitTime = Liquidize.MadeWithMV.WaitTime;
-                    this.startFadeIn(Liquidize.MadeWithMV.FadeInTime, false);
+                    this._customWaitTime = WaitTime;
+                    this.startFadeIn(FadeInTime, false);
                     this._customFadeIn = true;
                 } else {
                     if (this._customWaitTime > 0 && this._customFadeOut == false) {
@@ -236,14 +237,14 @@ function Scene_Splash() {
                     } else {
                         if (this._customFadeOut == false) {
                             this._customFadeOut = true;
-                            this.startFadeOut(Liquidize.MadeWithMV.FadeOutTime, false);
+                            this.startFadeOut(FadeOutTime, false);
                         }
                     }
                 }
-            } else if (!Liquidize.MadeWithMV.ShowMV) {
+            } else if (!ShowMV) {
                 if (!this._customFadeIn) {
                     this._customSplash2.opacity = 255;
-                    this.startFadeIn(Liquidize.MadeWithMV.FadeInTime, false);
+                    this.startFadeIn(FadeInTime, false);
                     this._customFadeIn = true;
                 } else {
                     if (this._customWaitTime > 0 && this._customFadeOut == false) {
@@ -251,17 +252,17 @@ function Scene_Splash() {
                     } else {
                         if (this._customFadeOut == false) {
                             this._customFadeOut = true;
-                            this.startFadeOut(Liquidize.MadeWithMV.FadeOutTime, false);
+                            this.startFadeOut(FadeOutTime, false);
                         }
                     }
                 }
             }
         }
 
-        if (Liquidize.MadeWithMV.ShowCustom2) {
-            if (Liquidize.MadeWithMV.ShowMV && this._mvFadeOut == true && this._customFadeOut == true) {
+        if (ShowCustom2) {
+            if (ShowMV && this._mvFadeOut == true && this._customFadeOut == true) {
                 this.gotoTitleOrTest();
-            } else if (!Liquidize.MadeWithMV.ShowMV && this._customFadeOut == true) {
+            } else if (!ShowMV && this._customFadeOut == true) {
                 this.gotoTitleOrTest();
             }
         } else {
@@ -274,17 +275,17 @@ function Scene_Splash() {
     };
 
     Scene_Splash.prototype.createSplashes = function() {
-        if (Liquidize.MadeWithMV.ShowMV) {
-            this._mvSplash = new Sprite(ImageManager.loadSystem(Liquidize.MadeWithMV.MVImage));
+        if (ShowMV) {
+            this._mvSplash = new Sprite(ImageManager.loadSystem(MVImage));
             this.addChild(this._mvSplash);
         }
-        if (Liquidize.MadeWithMV.ShowCustom) {
-            this._customSplash = new Sprite(ImageManager.loadSystem(Liquidize.MadeWithMV.CustomImage));
+        if (ShowCustom) {
+            this._customSplash = new Sprite(ImageManager.loadSystem(CustomImage));
             this._customSplash.opacity = 0;
             this.addChild(this._customSplash);
         }
-        if (Liquidize.MadeWithMV.ShowCustom2) {
-            this._customSplash2 = new Sprite(ImageManager.loadSystem(Liquidize.MadeWithMV.CustomImage2));
+        if (ShowCustom2) {
+            this._customSplash2 = new Sprite(ImageManager.loadSystem(CustomImage2));
             this._customSplash2.opacity = 0;
             this.addChild(this._customSplash2);
         }
