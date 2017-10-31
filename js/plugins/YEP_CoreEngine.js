@@ -1212,8 +1212,10 @@ Yanfly.updateResolution = function() {
 Yanfly.openConsole = function() {
   if (Utils.isNwjs() && Utils.isOptionValid('test')) {
     var _debugWindow = require('nw.gui').Window.get().showDevTools();
-    _debugWindow.moveTo(0, 0);
-    window.focus();
+    if (_debugWindow) {
+      _debugWindow.moveTo(0, 0);
+      window.focus();
+    }
   }
 };
 
