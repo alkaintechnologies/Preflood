@@ -629,39 +629,39 @@
  * @default 0    
  *
  * @param W Enemy Y-Axis
- * @desc Definição do posição Y-axis do janela.
+ * @desc Determines the enemy winow Y-axis.
  * @default 444
  *
  * @param W Enemy Width
- * @desc Definição da largura da janela.
+ * @desc Determines the enemy window width.
  * @default 816
  *
  * @param W Enemy Height
- * @desc Definição da altura da janela.
+ * @desc Determines the enemy window height.
  * @default 180
  *
  * @param W Enemy maxCols
- * @desc Definição da quantidade de colunas da janela.
+ * @desc Determines the number of columns in the window.
  * @default 2 
  *
  * @param W Enemy Slide X
- * @desc Animação de Slide X-Axis.
+ * @desc Slide Animation X-Axis.
  * @default 0
  *
  * @param W Enemy Slide Y
- * @desc Animação de Slide Y-Axis.
+ * @desc Slide Animation Y-Axis.
  * @default 50 
  * 
  * @param Layout Enemy
- * @desc Ativar a imagem de layout.
+ * @desc Enables/Disables enemy layout image.
  * @default true
  *
  * @param L Enemy X-Axis
- * @desc Definição do posição X-axis do layout.
+ * @desc Determines the X-axis position of the enemy layout.
  * @default 0
  *
  * @param L Enemy Y-Axis
- * @desc Definição do posição Y-axis do layout.
+ * @desc Determines the X-axis position of the enemy layout.
  * @default -67
  *
  * @param >> SCREEN LAYOUT ===================
@@ -669,15 +669,15 @@
  * @default
  *
  * @param Screen Layout
- * @desc Ativar o Layout da tela.
+ * @desc Enables/Disables screen layout image.
  * @default true
  *
  * @param Screen X-Axis
- * @desc Definição do posição X-axis da imagem.
+ * @desc Determines the X-axis position of the image.
  * @default 0
  *
  * @param Screen Y-Axis
- * @desc Definição do posição Y-axis da imagem.
+ * @desc Determines the Y-axis position of the image.
  * @default 0
  *
  * @param >> CUSTOM POSITION ===================
@@ -685,42 +685,42 @@
  * @default   
  *
  * @param Custom Position 1
- * @desc Definição da posição da hud.
+ * @desc Determines custom hud position.
  * Ex -     200,200
  * @default 235,425
  *
  * @param Custom Position 2
- * @desc Definição da posição da hud.
+ * @desc Determines custom hud position.
  * Ex -     200,200
  * @default 285,485
  *
  * @param Custom Position 3
- * @desc Definição da posição da hud.
+ * @desc Determines custom hud position.
  * Ex -     200,200
  * @default 335,545
  *
  * @param Custom Position 4
- * @desc Definição da posição da hud.
+ * @desc Determines custom hud position.
  * Ex -     200,200
  * @default
  *
  * @param Custom Position 5
- * @desc Definição da posição da hud.
+ * @desc Determines custom hud position.
  * Ex -     200,200
  * @default
  *
  * @param Custom Position 6
- * @desc Definição da posição da hud.
+ * @desc Determines custom hud position.
  * Ex -     200,200
  * @default  
  *
  * @param Custom Position 7
- * @desc Definição da posição da hud.
+ * @desc Determines custom hud position.
  * Ex -     200,200
  * @default
  *
  * @param Custom Position 8
- * @desc Definição da posição da hud.
+ * @desc Determines custom hud position.
  * Ex -     200,200
  * @default  
  *
@@ -729,6 +729,10 @@
  * +++ MOG_BattleHud (v3.7) +++
  * By Moghunter 
  * https://atelierrgss.wordpress.com/
+ * =============================================================================
+ * 
+ * Translated by Alkain Studios LLC
+ * 
  * =============================================================================
  * This plugin allows you to customize the battle layout.
  * You will need the following files. (img/battlehud/)
