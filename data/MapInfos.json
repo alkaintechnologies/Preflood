@@ -1,8 +1,8 @@
 [
 null,
-{"id":1,"expanded":true,"name":"Town","order":22,"parentId":13,"scrollX":1080,"scrollY":639.3333333333334},
+{"id":1,"expanded":true,"name":"Town","order":22,"parentId":13,"scrollX":1228.5,"scrollY":691.5},
 {"id":2,"expanded":true,"name":"Debug Room","order":1,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
-{"id":3,"expanded":true,"name":"To Do:","order":3,"parentId":0,"scrollX":4914,"scrollY":2766},
+{"id":3,"expanded":true,"name":"To Do:","order":3,"parentId":0,"scrollX":540.6666666666666,"scrollY":307.3333333333333},
 {"id":4,"expanded":false,"name":"Cinematic","order":40,"parentId":0,"scrollX":1404,"scrollY":790.2857142857142},
 {"id":5,"expanded":true,"name":"Finished","order":41,"parentId":0,"scrollX":893.4545454545455,"scrollY":502.90909090909093},
 {"id":6,"expanded":true,"name":"WIP","order":5,"parentId":0,"scrollX":539.3333333333334,"scrollY":316.6666666666667},
@@ -11,7 +11,7 @@ null,
 {"id":9,"expanded":false,"name":"Player's Modern Home","order":39,"parentId":6,"scrollX":539.3333333333334,"scrollY":464.3333333333333},
 {"id":10,"expanded":true,"name":"Dayton's House","order":30,"parentId":1,"scrollX":540.6666666666666,"scrollY":384.6666666666667},
 {"id":11,"expanded":false,"name":"Debug Room","order":2,"parentId":2,"scrollX":595.6363636363636,"scrollY":335.27272727272725},
-{"id":12,"expanded":true,"name":"Foothills","order":32,"parentId":13,"scrollX":590,"scrollY":855.3333333333334},
+{"id":12,"expanded":true,"name":"Foothills","order":32,"parentId":13,"scrollX":1638,"scrollY":922},
 {"id":13,"expanded":true,"name":"Main Map","order":6,"parentId":6,"scrollX":1217.3333333333333,"scrollY":906},
 {"id":14,"expanded":false,"name":"Forest","order":33,"parentId":13,"scrollX":1136,"scrollY":828.3333333333334},
 {"id":15,"expanded":false,"name":"Plains - Forest","order":34,"parentId":13,"scrollX":3649.7142857142853,"scrollY":2208.8571428571427},
@@ -41,5 +41,6 @@ null,
 {"id":39,"expanded":false,"name":"Section 3.5","order":11,"parentId":21,"scrollX":1404,"scrollY":790.2857142857142},
 {"id":40,"expanded":false,"name":"Cellar Extended","order":26,"parentId":19,"scrollX":659.3333333333334,"scrollY":782.6666666666666},
 {"id":41,"expanded":false,"name":"Shop","order":29,"parentId":1,"scrollX":1225.5,"scrollY":683.25},
-{"id":42,"expanded":false,"name":"Dayton's Cellar","order":31,"parentId":10,"scrollX":546,"scrollY":307.3333333333333}
+{"id":42,"expanded":false,"name":"Dayton's Cellar","order":31,"parentId":10,"scrollX":1638,"scrollY":922},
+{"id":43,"expanded":false,"name":"The Ark","order":33,"parentId":14,"scrollX":1638,"scrollY":922}
 ]

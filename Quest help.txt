@@ -1,5 +1,5 @@
 = Available quests: =
-- Hirams Quest
+- Hirams Quest [ 6 / 6 ] {Entered}
 	[X] Quest Add 1
 	[X] Quest 1 Complete Objective 1
 	[X] Quest 1 Complete Objective 2 
@@ -7,7 +7,7 @@
 	[X] Quest Set Completed 1
 	[X] Quest 1 Claim Reward 1
 	
-- Capture Rodents 1 [ 1 / 6 ]
+- Capture Rodents 1 [ 1 / 6 ] {Entered}
 	[X] Quest Add 2 
 	[ ] Quest 2 Complete Objective 1
 	[ ] Quest 2 Show Objective 2
@@ -15,7 +15,7 @@
 	[ ] Quest Set Completed 2
 	[ ] Quest 2 Claim Reward 1
 	
-- Capture Rodents 2 [ 1 / 6 ]
+- Capture Rodents 2 [ 1 / 6 ] {Entered}
 	[X] Quest Add 3 
 	[ ] Quest 3 Complete Objective 1
 	[ ] Quest 3 Show Objective 2
@@ -23,7 +23,7 @@
 	[ ] Quest Set Completed 3
 	[ ] Quest 3 Claim Reward 1
 	
-- Gopher Wood [ 1 / 6 ]
+- Gopher Wood [ 1 / 6 ] {Entered}
 	[X] Quest Add 4 
 	[ ] Quest 4 Complete Objective 1
 	[ ] Quest 4 Show Objective 2
@@ -31,7 +31,7 @@
 	[ ] Quest Set Completed 4
 	[ ] Quest 4 Claim Reward 1
 	
-- Rock Dust [ 0 / 6 ]
+- Rock Dust [ 0 / 6 ] {Entered}
 	[ ] Quest Add 5 
 	[ ] Quest 5 Complete Objective 1
 	[ ] Quest 5 Show Objective 2
@@ -41,7 +41,7 @@
 	[ ] Quest Set Completed 5
 	[ ] Quest 5 Claim Reward 1, 2, 3
 	
-- Elders Request [ 0 / 6 ]
+- Elders Request [ 0 / 6 ] {Entered}
 	[ ] Quest Add 6 
 	[ ] Quest 6 Complete Objective 1
 	[ ] Quest 6 Show Objective 2
@@ -51,14 +51,24 @@
 	[ ] Quest Set Completed 6
 	[ ] Quest 6 Claim Reward 1, 2
 	
-- Hay and Straw [ 0 / 6 ]
+- Hay and Straw [ 0 / 6 ] {Entered}
 	[ ] Quest Add 7 
 	[ ] Quest 7 Complete Objective 1
 	[ ] Quest 7 Complete Objective 2
+	[ ] Quest 7 Show Objective 3
+	[ ] Quest 7 Show Objective 4
+	[ ] Quest 7 Complete Objective 3
+	[ ] Quest 7 Complete Objective 4
 	[ ] Quest Set Completed 7
 	[ ] Quest 7 Claim Reward 1
 	
 - Travel Peril [ 0 / 6 ]
+	- Title = 
+	- Type  = 
+	- Diff. = 
+	- Giver = 
+	- Locat =
+	- Desc. = 
 	[ ] Quest Add 8 
 	[ ] Quest 8 Complete Objective 1
 	[ ] Quest 8 Show Objective 2
