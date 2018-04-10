@@ -8,10 +8,11 @@ Imported.YEP_EnemyLevels = true;
 
 var Yanfly = Yanfly || {};
 Yanfly.ELV = Yanfly.ELV || {};
+Yanfly.ELV.version = 1.08;
 
 //=============================================================================
  /*:
- * @plugindesc v1.04 This plugin enables giving your enemies levels and
+ * @plugindesc v1.08 This plugin enables giving your enemies levels and
  * parameter changes with those levels.
  * @author Yanfly Engine Plugins
  *
@@ -19,28 +20,46 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param Show Level
+ * @parent ---General---
+ * @type boolean
+ * @on Show
+ * @off Hide
  * @desc Show enemy levels by default?
  * NO - false     YES - true
  * @default true
  *
  * @param Level Format
+ * @parent ---General---
  * @desc How to format enemy names with levels.
  * %1 - Level     %2 - Name
  * @default Lv%1 %2
  *
  * @param Minimum Level
+ * @parent ---General---
+ * @type number
+ * @min 1
  * @desc Default lowest level an enemy can be.
  * @default 1
  *
  * @param Maximum Level
+ * @parent ---General---
+ * @type number
+ * @min 1
  * @desc Default highest level an enemy can be.
  * @default 9999
  *
  * @param Maximum Cap
+ * @parent ---General---
+ * @type number
+ * @min 1
  * @desc Highest possible level an enemy can be.
  * @default 9999
  *
  * @param Preserve Rate
+ * @parent ---General---
+ * @type boolean
+ * @on Preserve
+ * @off Don't Preserve
  * @desc If level changing, preserve the enemy's HP/MP rates?
  * NO - false     YES - true
  * @default true
@@ -49,15 +68,35 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param Default Type
+ * @parent ---Level Setup---
+ * @type select
+ * @option Lowest level of all actors that have joined the player party.
+ * @value 0
+ * @option Lowest level of all actors that are in the battling party.
+ * @value 1
+ * @option Average level of all actors that have joined the player party.
+ * @value 2
+ * @option Average level of all actors that are in the battling party.
+ * @value 3
+ * @option Highest level of all actors that have joined the player party.
+ * @value 4
+ * @option Highest level of all actors that are in the battling party.
+ * @value 5
  * @desc Default level calculated relative to the player party:
  * Refer to the Help File for Default Level Types.
  * @default 5
  *
  * @param Positive Fluctuation
+ * @parent ---Level Setup---
+ * @type number
+ * @min 0
  * @desc Default positive level fluctuation for all enemies.
  * @default 2
  *
  * @param Negative Fluctuation
+ * @parent ---Level Setup---
+ * @type number
+ * @min 0
  * @desc Default negative level fluctuation for all enemies.
  * @default 2
  *
@@ -65,14 +104,23 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param MaxHP Formula
+ * @parent ---MaxHP Growth---
  * @desc The formula used for this parameter's calculations.
  * @default base * (1 + (level - 1) * rate) + (flat * (level - 1))
  *
  * @param MaxHP Rate Growth
+ * @parent ---MaxHP Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The growth rate for this parameter per level.
  * @default 0.15
  *
  * @param MaxHP Flat Growth
+ * @parent ---MaxHP Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The flat growth value for this parameter per level.
  * @default 50.0
  *
@@ -80,14 +128,23 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param MaxMP Formula
+ * @parent ---MaxMP Growth---
  * @desc The formula used for this parameter's calculations.
  * @default base * (1 + (level - 1) * rate) + (flat * (level - 1))
  *
  * @param MaxMP Rate Growth
+ * @parent ---MaxMP Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The growth rate for this parameter per level.
  * @default 0.10
  *
  * @param MaxMP Flat Growth
+ * @parent ---MaxMP Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The flat growth value for this parameter per level.
  * @default 10.0
  *
@@ -95,14 +152,23 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param ATK Formula
+ * @parent ---ATK Growth---
  * @desc The formula used for this parameter's calculations.
  * @default base * (1 + (level - 1) * rate) + (flat * (level - 1))
  *
  * @param ATK Rate Growth
+ * @parent ---ATK Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The growth rate for this parameter per level.
  * @default 0.05
  *
  * @param ATK Flat Growth
+ * @parent ---ATK Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The flat growth value for this parameter per level.
  * @default 2.5
  *
@@ -110,14 +176,23 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param DEF Formula
+ * @parent ---DEF Growth---
  * @desc The formula used for this parameter's calculations.
  * @default base * (1 + (level - 1) * rate) + (flat * (level - 1))
  *
  * @param DEF Rate Growth
+ * @parent ---DEF Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The growth rate for this parameter per level.
  * @default 0.05
  *
  * @param DEF Flat Growth
+ * @parent ---DEF Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The flat growth value for this parameter per level.
  * @default 2.5
  *
@@ -125,14 +200,23 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param MAT Formula
+ * @parent ---MAT Growth---
  * @desc The formula used for this parameter's calculations.
  * @default base * (1 + (level - 1) * rate) + (flat * (level - 1))
  *
  * @param MAT Rate Growth
+ * @parent ---MAT Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The growth rate for this parameter per level.
  * @default 0.05
  *
  * @param MAT Flat Growth
+ * @parent ---MAT Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The flat growth value for this parameter per level.
  * @default 2.5
  *
@@ -140,14 +224,23 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param MDF Formula
+ * @parent ---MDF Growth---
  * @desc The formula used for this parameter's calculations.
  * @default base * (1 + (level - 1) * rate) + (flat * (level - 1))
  *
  * @param MDF Rate Growth
+ * @parent ---MDF Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The growth rate for this parameter per level.
  * @default 0.05
  *
  * @param MDF Flat Growth
+ * @parent ---MDF Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The flat growth value for this parameter per level.
  * @default 2.5
  *
@@ -155,14 +248,23 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param AGI Formula
+ * @parent ---AGI Growth---
  * @desc The formula used for this parameter's calculations.
  * @default base * (1 + (level - 1) * rate) + (flat * (level - 1))
  *
  * @param AGI Rate Growth
+ * @parent ---AGI Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The growth rate for this parameter per level.
  * @default 0.05
  *
  * @param AGI Flat Growth
+ * @parent ---AGI Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The flat growth value for this parameter per level.
  * @default 2.5
  *
@@ -170,14 +272,23 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param LUK Formula
+ * @parent ---LUK Growth---
  * @desc The formula used for this parameter's calculations.
  * @default base * (1 + (level - 1) * rate) + (flat * (level - 1))
  *
  * @param LUK Rate Growth
+ * @parent ---LUK Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The growth rate for this parameter per level.
  * @default 0.05
  *
  * @param LUK Flat Growth
+ * @parent ---LUK Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The flat growth value for this parameter per level.
  * @default 2.5
  *
@@ -185,14 +296,23 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param EXP Formula
+ * @parent ---EXP Growth---
  * @desc The formula used for this parameter's calculations.
  * @default base * (1 + (level - 1) * rate) + (flat * (level - 1))
  *
  * @param EXP Rate Growth
+ * @parent ---EXP Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The growth rate for this parameter per level.
  * @default 0.15
  *
  * @param EXP Flat Growth
+ * @parent ---EXP Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The flat growth value for this parameter per level.
  * @default 10.0
  *
@@ -200,14 +320,23 @@ Yanfly.ELV = Yanfly.ELV || {};
  * @default
  *
  * @param Gold Formula
+ * @parent ---Gold Growth---
  * @desc The formula used for this parameter's calculations.
  * @default base * (1 + (level - 1) * rate) + (flat * (level - 1))
  *
  * @param Gold Rate Growth
+ * @parent ---Gold Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The growth rate for this parameter per level.
  * @default 0.15
  *
  * @param Gold Flat Growth
+ * @parent ---Gold Growth---
+ * @type number
+ * @min 0
+ * @decimals 2
  * @desc The flat growth value for this parameter per level.
  * @default 10.0
  *
@@ -483,6 +612,20 @@ Yanfly.ELV = Yanfly.ELV || {};
  * ============================================================================
  * Changelog
  * ============================================================================
+ *
+ * Version 1.08:
+ * - Updated for RPG Maker MV version 1.5.0.
+ *
+ * Version 1.07:
+ * - Enemy Transform event now adjusts for stat changes when transforming into
+ * a different enemy.
+ *
+ * Version 1.06:
+ * - Lunatic Mode fail safes added.
+ *
+ * Version 1.05:
+ * - Updated the custom level formula to have the formulas 'b', 'r', and 'f' to
+ * be able to use the formulas from FlyingDream's calculator.
  *
  * Version 1.04:
  * - Updated for RPG Maker MV version 1.1.0.
@@ -917,7 +1060,12 @@ Game_Enemy.prototype.originalLevel = function() {
 
 Game_Enemy.prototype.getSetupLevel = function() {
     var level = 0;
-    eval(this.enemy().startingLevel);
+    var code = this.enemy().startingLevel;
+    try {
+      eval(code);
+    } catch (e) {
+      Yanfly.Util.displayError(e, code, 'ENEMY STARTING LEVEL ERROR');
+    }
     return Math.floor(level);
 };
 
@@ -961,7 +1109,12 @@ Game_Enemy.prototype.paramBase = function(paramId) {
     var user = this;
     var s = $gameSwitches._data;
     var v = $gameVariables._data;
-    this._cacheBaseParam[paramId] = eval(formula);
+    try {
+      this._cacheBaseParam[paramId] = eval(formula);
+    } catch (e) {
+      this._cacheBaseParam[paramId] = 0;
+      Yanfly.Util.displayError(e, formula, 'ENEMY PARAM BASE FORMULA ERROR');
+    }
     return this._cacheBaseParam[paramId];
 };
 
@@ -980,9 +1133,18 @@ Game_Enemy.prototype.exp = function() {
     var rate = this.enemy().baseParamRate[paramId];
     var flat = this.enemy().baseParamFlat[paramId];
     var user = this;
+    var b = base;
+    var l = level;
+    var f = flat;
+    var r = rate;
     var s = $gameSwitches._data;
     var v = $gameVariables._data;
-    this._cacheBaseParam[paramId] = Math.floor(eval(formula));
+    try {
+      this._cacheBaseParam[paramId] = Math.floor(eval(formula));
+    } catch (e) {
+      this._cacheBaseParam[paramId] = 0;
+      Yanfly.Util.displayError(e, formula, 'ENEMY EXP FORMULA ERROR');
+    }
     return this._cacheBaseParam[paramId];
 };
 
@@ -1003,7 +1165,12 @@ Game_Enemy.prototype.gold = function() {
     var user = this;
     var s = $gameSwitches._data;
     var v = $gameVariables._data;
-    this._cacheBaseParam[paramId] = Math.floor(eval(formula));
+    try {
+      this._cacheBaseParam[paramId] = Math.floor(eval(formula));
+    } catch (e) {
+      this._cacheBaseParam[paramId] = 0;
+      Yanfly.Util.displayError(e, formula, 'ENEMY GOLD FORMULA ERROR');
+    }
     return this._cacheBaseParam[paramId];
 };
 
@@ -1039,6 +1206,12 @@ Game_Enemy.prototype.isResistLevelChange = function() {
 
 Game_Enemy.prototype.resetLevel = function() {
     this.changeLevel(this.originalLevel());
+};
+
+Yanfly.ELV.Game_Enemy_transform = Game_Enemy.prototype.transform;
+Game_Enemy.prototype.transform = function(enemyId) {
+  Yanfly.ELV.Game_Enemy_transform.call(this, enemyId);
+  this._cacheBaseParam = {};
 };
 
 //=============================================================================
@@ -1201,7 +1374,12 @@ Game_Action.prototype.itemEnemyLevelEval = function(target, level) {
     var subject = this.subject();
     var s = $gameSwitches._data;
     var v = $gameVariables._data;
-    eval(this.item().enemyLevelEval);
+    var code = this.item().enemyLevelEval;
+    try {
+      eval(code);
+    } catch (e) {
+      Yanfly.Util.displayError(e, code, 'ENEMY LEVEL ITEM ALTER CODE ERROR');
+    }
     return level;
 };
 
@@ -1283,6 +1461,17 @@ if (!Yanfly.Util.toGroup) {
     Yanfly.Util.toGroup = function(inVal) {
         return inVal;
     }
+};
+
+Yanfly.Util.displayError = function(e, code, message) {
+  console.log(message);
+  console.log(code || 'NON-EXISTENT');
+  console.error(e);
+  if (Utils.isNwjs() && Utils.isOptionValid('test')) {
+    if (!require('nw.gui').Window.get().isDevToolsOpen()) {
+      require('nw.gui').Window.get().showDevTools();
+    }
+  }
 };
 
 //=============================================================================

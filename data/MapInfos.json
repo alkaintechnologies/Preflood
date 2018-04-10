@@ -10,7 +10,7 @@ null,
 {"id":8,"expanded":false,"name":"Training Hall","order":27,"parentId":1,"scrollX":1314,"scrollY":733},
 {"id":9,"expanded":false,"name":"Player's Modern Home","order":39,"parentId":6,"scrollX":540.6666666666666,"scrollY":302},
 {"id":10,"expanded":false,"name":"Dayton's House","order":29,"parentId":1,"scrollX":1314,"scrollY":733},
-{"id":11,"expanded":false,"name":"Swamp Shack","order":37,"parentId":25,"scrollX":861.3333333333334,"scrollY":711.3333333333334},
+{"id":11,"expanded":false,"name":"Debug Room","order":2,"parentId":2,"scrollX":595.6363636363636,"scrollY":335.27272727272725},
 {"id":12,"expanded":true,"name":"Foothills","order":30,"parentId":13,"scrollX":1669.1999999999998,"scrollY":817.8},
 {"id":13,"expanded":true,"name":"Main Map","order":5,"parentId":6,"scrollX":1712,"scrollY":1489},
 {"id":14,"expanded":false,"name":"Forest","order":31,"parentId":13,"scrollX":1298,"scrollY":1139},
@@ -41,5 +41,8 @@ null,
 {"id":39,"expanded":false,"name":"Section 3.5","order":10,"parentId":21,"scrollX":1404,"scrollY":790.2857142857142},
 {"id":40,"expanded":false,"name":"Cellar Extended","order":25,"parentId":19,"scrollX":973.1999999999999,"scrollY":646.8},
 {"id":41,"expanded":false,"name":"Shop","order":28,"parentId":1,"scrollX":1314,"scrollY":733},
-{"id":42,"expanded":false,"name":"Ark Entrance","order":38,"parentId":13,"scrollX":872,"scrollY":488.6666666666667}
+{"id":42,"expanded":false,"name":"Ark Entrance","order":38,"parentId":13,"scrollX":872,"scrollY":488.6666666666667},
+{"id":43,"expanded":false,"name":"Dayton's Cellar","order":31,"parentId":10,"scrollX":1638,"scrollY":922},
+{"id":44,"expanded":false,"name":"The Ark","order":33,"parentId":14,"scrollX":1638,"scrollY":922},
+{"id":45,"expanded":false,"name":"Swamp Shack","order":37,"parentId":25,"scrollX":861.3333333333334,"scrollY":711.3333333333334}
 ]
